@@ -1,18 +1,18 @@
-import express, {
-    Router
-} from 'express';
-import bodyParser from "body-parser"
-import router from './routes/routes';
+import express from 'express';
+import bodyParser from 'body-parser';
+import {
+    routes
+} from "./routes";
+import "./config/db-config";
 const app = express();
+const PORT = process.env.PORT || 8000;
 
-// middlewears
-app.use("/", router);
 app.use(bodyParser.urlencoded({
     extended: true
 }));
 app.use(bodyParser.json());
+// app.use("/", router)
 
+routes(app);
 
-const PORT = process.env.PORT || 8000;
-
-app.listen(PORT, () => console.log(`server is running at port ${  PORT }`))
+app.listen(PORT, () => console.log(` server is running on port ${ PORT }`));
