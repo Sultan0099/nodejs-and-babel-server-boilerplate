@@ -6,7 +6,8 @@ import {
 
 // database config 
 import "./config/db-config";
-
+// multer config
+import "./config/multer-config";
 const app = express();
 const PORT = process.env.PORT || 8000;
 
