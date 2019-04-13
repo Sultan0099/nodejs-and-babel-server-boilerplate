@@ -12,7 +12,7 @@ const productSchema = new Schema({
     },
     img: {
         type: String,
-        required: true
+        required: true,
     },
     details: {
         type: String,
@@ -28,7 +28,7 @@ const productSchema = new Schema({
     },
     createdAt: {
         type: String,
-        default: Date.now()
+        default: Date(Date.now())
     }
 
 });

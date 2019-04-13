@@ -7,14 +7,13 @@ export const routes = (app) => {
         .get(controller.showAllProducts)
         .post(controller.createNewProduct)
 
-    // app.route("/product:id")
-    //     .put(controller.update)
-    //     .get(controller.showOne)
-    //     .delete(controller.del)
+    app.route("/product/:id")
+        .get(controller.getOneProduct)
+    // .put(controller.upDateOneProduct)
+    // .delete(controller.drpoProduct)
 
 
     app.get("/", (req, res) => {
         res.send("hello world")
     })
-    console.log("routes")
 }

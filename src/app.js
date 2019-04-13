@@ -3,7 +3,10 @@ import bodyParser from 'body-parser';
 import {
     routes
 } from "./routes";
+
+// database config 
 import "./config/db-config";
+
 const app = express();
 const PORT = process.env.PORT || 8000;
 
@@ -13,6 +16,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 // app.use("/", router)
 
+//  routes 
 routes(app);
 
 app.listen(PORT, () => console.log(` server is running on port ${ PORT }`));
