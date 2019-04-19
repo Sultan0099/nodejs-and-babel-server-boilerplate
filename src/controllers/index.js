@@ -50,7 +50,7 @@ export const controller = {
                 success: false,
                 error: err
             })
-            res.send({
+            res.json({
                 success: true,
                 product
             })
